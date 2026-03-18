@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تأكيد الطلب - البرق</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- الهيدر -->
+  <header>
+    <img src="images/logo.png" alt="شعار البرق" class="logo">
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">عن الشركة</a>
+      <a href="contact.html">تواصل معنا</a>
+      <a href="order.html">اطلب الآن</a>
+    </nav>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="confirmation">
+    <h1>✅ تم استلام طلبك!</h1>
+    <p>شكرًا لك على استخدام خدمات البرق.</p>
+
+    <div class="order-details">
+      <p>رقم طلبك: <span id="orderID"></span></p>
+      <p>تاريخ ووقت الطلب: <span id="orderDateTime"></span></p>
+      <p>سيتم التواصل معك عبر WhatsApp قريبًا.</p>
+    </div>
+
+    <a href="index.html" class="btn-order">العودة للرئيسية</a>
+  </main>
+
+  <!-- الجافاسكربت -->
+  <script>
+    // جلب رقم الطلب والتاريخ من localStorage
+    document.getElementById('orderID').textContent = localStorage.getItem('latestOrderID');
+    document.getElementById('orderDateTime').textContent = localStorage.getItem('latestDateTime');
+  </script>
+</body>
+</html>

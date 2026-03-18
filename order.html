@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>اطلب الآن - البرق</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ربط CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #fff8e1;
+      direction: rtl;
+    }
+
+    header {
+      background-color: #6a0dad;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .order-form-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff3b0;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6a0dad;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #500082;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>🚀 شركة البرق</div>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">عن الشركة</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main class="order-form-container">
+    <h1>اطلب الآن</h1>
+
+    <form id="orderForm">
+
+      <label>الاسم الكامل:</label>
+      <input type="text" id="customerName" required>
+
+      <label>رقم الهاتف:</label>
+      <input type="tel" id="phoneNumber" required>
+
+      <label>العنوان:</label>
+      <input type="text" id="address" required>
+
+      <label>المطعم / المكان:</label>
+      <select id="restaurant" required>
+        <option value="">اختر</option>
+        <option value="مطعم البرق">مطعم البرق</option>
+        <option value="مطعم السعادة">مطعم السعادة</option>
+        <option value="سوبرماركت">سوبرماركت</option>
+      </select>
+
+      <label>نوع الطلب:</label>
+      <select id="orderType" required>
+        <option value="">اختر</option>
+        <option value="طلبات منزلية">طلبات منزلية</option>
+        <option value="أغراض مطبخ">أغراض مطبخ</option>
+        <option value="مطاعم">مطاعم</option>
+      </select>
+
+      <label>ملاحظات:</label>
+      <textarea id="notes"></textarea>
+<div id="formMessage"></div>
+      <button type="submit">إرسال الطلب</button>
+
+    </form>
+  </main>
+
+  <!-- ربط JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>معلومات الطلب - البرق</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div>🚀 شركة البرق</div>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">عن الشركة</a>
+      <a href="contact.html">تواصل معنا</a>
+      <a href="order.html">اطلب الآن</a>
+    </nav>
+  </header>
+
+  <main class="order-info container">
+    <h1>معلومات طلبك 📦</h1>
+    <p id="orderID"></p>
+    <p id="dateTime"></p>
+    <p id="name"></p>
+    <p id="phone"></p>
+    <p id="address"></p>
+    <p id="restaurant"></p>
+    <p id="orderType"></p>
+    <p id="notes"></p>
+  </main>
+
+  <script>
+    const orderData = JSON.parse(localStorage.getItem('latestOrder'));
+    if(orderData) {
+      document.getElementById('orderID').innerHTML = رقم الطلب: <strong>${orderData.orderID}</strong>;
+      document.getElementById('dateTime').innerHTML = تاريخ ووقت الطلب: <strong>${orderData.dateTime}</strong>;
+      document.getElementById('name').innerHTML = الاسم: <strong>${orderData.name}</strong>;
+      document.getElementById('phone').innerHTML = رقم الهاتف: <strong>${orderData.phone}</strong>;
+      document.getElementById('address').innerHTML = العنوان: <strong>${orderData.address}</strong>;
+      document.getElementById('restaurant').innerHTML = المطعم/المكان: <strong>${orderData.restaurant}</strong>;
+      document.getElementById('orderType').innerHTML = نوع الطلب: <strong>${orderData.orderType}</strong>;
+      document.getElementById('notes').innerHTML = ملاحظات: <strong>${orderData.notes || 'لا توجد ملاحظات'}</strong>;
+    }
+  </script>
+
+</body>
+</html>
